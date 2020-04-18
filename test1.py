@@ -14,6 +14,7 @@ print(_help)
 print("U have 5 tries.")
 tries = 5
 correct = 0
+letter = []
 
 while True:
     if correct == len(word):
@@ -27,17 +28,22 @@ while True:
     print("letter or word?")
     _try = input(">")
     
-    if _try == word:
+    if _try in letter:
+        print("given")
+        tries -=1
+        print(f"{tries} tries remaining")
+    
+    elif _try == word:
         print("got it")
         break
     
     elif _try in word:
+        letter.append(_try)
         print(_try,"is correct")
         correct += 1
         for index,x in enumerate(word):
             if _try == x:
                 _help[index] = _try
-
         print(_help)
     
     else:
