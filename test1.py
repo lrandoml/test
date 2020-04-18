@@ -34,9 +34,13 @@ while True:
     elif _try in word:
         print(_try,"is correct")
         correct += 1
+        for index,x in enumerate(word):
+            if _try == x:
+                _help[index] = _try
+
+        print(_help)
     
     else:
         tries -= 1
         print("false")
-        print(f"{tries} tries remaining")      
-
+        print(f"{tries} tries remaining")
