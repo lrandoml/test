@@ -12,9 +12,11 @@ for i in word:
 
 print(_help)
 print("U have 5 tries.")
+
 tries = 5
 correct = 0
 letter = []
+num = ["1","2","3","4","5","6","7","9","0"]
 
 while True:
     if correct == len(word):
@@ -26,12 +28,18 @@ while True:
         break
     
     print("letter or word?")
-    _try = input(">")
-    
+    _try = str(input(">"))
+
     if _try in letter:
         print("given")
         tries -=1
         print(f"{tries} tries remaining")
+    
+    elif _try in num:
+        print("just letter or word.")
+
+    elif len(_try) > 1 and _try != word:
+        print("one letter or the word.")
     
     elif _try == word:
         print("got it")
