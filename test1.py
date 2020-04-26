@@ -2,31 +2,31 @@
 
 from random import choice
 
-list_word = ["yes","man","woman","keyboard","mouse","phone"]
+list_word = ['console','idiot','telephone','idris','rayan','papa']
 word = choice(list_word)
+
+
 
 _help = []
 for i in word:
     i = "*"
     _help.append(i)
 
-print(_help)
-print("U have 5 tries.")
+print(*_help)
+
+print("U have 7 tries.")
 
 
 
 def test():
-    
+
+    tries = 7
     fdg = 0
-    tries = 5
     correct = 0
     letter = []
     num = ["1","2","3","4","5","6","7","9","0"]
     
-    while True:
-        if correct == len(word):
-            print("got it")
-            break
+    while correct != len(word):
         
         if tries == 0:
             print("game over")
@@ -64,14 +64,17 @@ def test():
         elif _try in word:
             letter.append(_try)
             print(_try,"is correct")
-            correct += 1
             for index,x in enumerate(word):
                 if _try == x:
+                    correct += 1
                     _help[index] = _try
-            print(_help)
+                    
+            print(*_help)
         
         else:
             tries -= 1
             print("false")
             print(f"{tries} tries remaining")
 test()
+
+print('got it')
