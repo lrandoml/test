@@ -12,15 +12,15 @@ for i in word:
     i = "*"
     _help.append(i)
 
+tries = 7
 print(*_help)
 
-print("U have 7 tries.")
+print(f"U have {tries} tries.")
 
 
 
-def test():
+def test(tries):
 
-    tries = 7
     fdg = 0
     correct = 0
     letter = []
@@ -75,6 +75,6 @@ def test():
             tries -= 1
             print("false")
             print(f"{tries} tries remaining")
-test()
+test(tries)
 
 print('got it')
