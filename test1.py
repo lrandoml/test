@@ -3,11 +3,9 @@ from random_word import RandomWords
 from random import choice
 
 #random_word lib required
+
 r = RandomWords()
-
-
 word = r.get_random_word()
-
 
 
 _help = []
