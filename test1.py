@@ -1,9 +1,12 @@
-#first try
 
+from random_word import RandomWords
 from random import choice
 
-list_word = ['console','idiot','telephone','idris','rayan','papa']
-word = choice(list_word)
+
+r = RandomWords()
+
+
+word = r.get_random_word()
 
 
 
@@ -29,10 +32,10 @@ def test(tries):
     while correct != len(word):
         
         if tries == 0:
-            print("game over")
+            print(f"the word was : {word} \ngame over")
             break
         
-        print("letter or word?")
+        print("\nletter or word?\n")
         _try = str(input(">"))
     
         if _try == "" and fdg > 0:
@@ -73,8 +76,6 @@ def test(tries):
         
         else:
             tries -= 1
-            print("false")
+            print("\nfalse")
             print(f"{tries} tries remaining")
 test(tries)
-
-print('got it')
